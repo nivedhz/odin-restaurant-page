@@ -1,3 +1,4 @@
+import "../styles/home.css";
 import restoImg from "../assets/images/resto.jpg";
 import { createMenuPage } from "./menu.js";
 

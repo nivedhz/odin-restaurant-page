@@ -1,5 +1,4 @@
 import "./styles/style.css";
-import "./styles/home.css";
 import { createAboutPage } from "./pages/about.js";
 import { createHomePage } from "./pages/home.js";
 import { createMenuPage } from "./pages/menu.js";
