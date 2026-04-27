@@ -1,3 +1,14 @@
+:root {
+  --clr-main-bgc: #100b04;
+  --clr-header-bgc: #202020;
+  --clr-btn-hover: rgba(255, 255, 255, 0.8);
+  --clr-white: white;
+}
+@font-face {
+  font-family: "Mea Culpa";
+  src: url(../assets/fonts/MeaCulpa-Regular.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,14 +17,15 @@
 
 .container {
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto 1fr;
+  background-color: var(--clr-main-bgc);
 }
 .main-header {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  background-color: #202020;
-  color: white;
+  background-color: var(--clr-header-bgc);
+  color: var(--clr-white);
 }
 .main-header__nav {
   display: flex;
@@ -24,6 +36,7 @@
   justify-content: center;
   align-items: center;
   user-select: none;
+  font-family: "Mea Culpa", sans-serif;
 }
 .header-btn {
   border: none;
@@ -34,9 +47,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: var(--clr-white);
 }
 .header-btn:hover {
-  outline: 2px solid yellow;
-  color: yellow;
+  text-decoration: underline;
+  color: var(--clr-btn-hover);
 }

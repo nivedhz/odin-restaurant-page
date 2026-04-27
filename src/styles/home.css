@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Mea Culpa";
+  src: url(../assets/fonts/MeaCulpa-Regular.ttf);
+}
+@font-face {
+  font-family: "Playwrite";
+  src: url(../assets/fonts/PlaywriteDESAS-VariableFont_wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.img-container {
+  display: grid;
+  box-shadow: 3px 3px 5px black;
+}
+.resto-img {
+  width: 100%;
+  max-height: calc(100vh - 77px);
+  background-size: cover;
+  grid-area: 1/1;
+}
+.welcome-msg-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  grid-area: 1/1;
+  font-size: 1.3rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  user-select: none;
+}
+.welcome-msg-container h1 {
+  font-family: "Mea Culpa", sans-serif;
+  user-select: none;
+}
+.menu-btn {
+  width: 200px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  border: none;
+  transition: 100ms background-color ease-in;
+  color: #694534;
+  cursor: pointer;
+}
+.menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 1rem;
+  gap: 1rem;
+}
+.message-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+  font-family: "Playwrite", sans-serif;
+  height: 400px;
+  background-color: #593721;
+  border-radius: 10px;
+  line-height: 2rem;
+  border: 3px solid black;
+  box-shadow: 2px 2px 3px black;
+}
