@@ -14,9 +14,22 @@ const state = {
 function renderMenu() {
   document.querySelector("#content").replaceChildren(createMenuPage());
 }
-function createHomePage() {
-  const homeContainer = document.createElement("main");
-  homeContainer.classList.add("home-container");
+
+function renderMsgGrid(homeContainer) {
+  const gridContainer = document.createElement("div");
+  gridContainer.classList.add("grid-container");
+
+  state.gridMsg.forEach((msg) => {
+    const gridItem = document.createElement("div");
+    gridItem.classList.add("message-grid");
+    gridItem.textContent = msg;
+    gridContainer.appendChild(gridItem);
+  });
+
+  homeContainer.appendChild(gridContainer);
+}
+
+function renderImgContainer(homeContainer) {
   const imgContainer = document.createElement("div");
   imgContainer.classList.add("img-container");
 
@@ -33,22 +46,22 @@ function createHomePage() {
   const menuBtn = document.createElement("button");
   menuBtn.classList.add("menu-btn");
   menuBtn.textContent = "Go to Menu";
-  menuBtn.addEventListener("click", renderMenu);
 
-  const gridContainer = document.createElement("div");
-  gridContainer.classList.add("grid-container");
-  state.gridMsg.forEach((msg) => {
-    const gridItem = document.createElement("div");
-    gridItem.classList.add("message-grid");
-    gridItem.textContent = msg;
-    gridContainer.appendChild(gridItem);
-  });
+  menuBtn.addEventListener("click", renderMenu);
 
   welcomeMsgContainer.append(restoName, welcomeMsg, menuBtn);
   imgContainer.appendChild(welcomeMsgContainer);
   imgContainer.appendChild(restoImgEl);
+
   homeContainer.appendChild(imgContainer);
-  homeContainer.appendChild(gridContainer);
+}
+
+function createHomePage() {
+  const homeContainer = document.createElement("main");
+  homeContainer.classList.add("home-container");
+
+  renderImgContainer(homeContainer);
+  renderMsgGrid(homeContainer);
 
   return homeContainer;
 }
