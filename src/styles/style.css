@@ -2,5 +2,41 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: 1px solid red;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+}
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #202020;
+  color: white;
+}
+.main-header__nav {
+  display: flex;
+  gap: 1rem;
+}
+.logo-txt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+.header-btn {
+  border: none;
+  background: none;
+  font-size: 1rem;
+  border-radius: 3px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.header-btn:hover {
+  outline: 2px solid yellow;
+  color: yellow;
 }
