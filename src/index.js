@@ -17,7 +17,7 @@ const state = {
 };
 
 function showDefault() {
-  DOM.container.contentContainer.replaceChildren(createMenuPage());
+  DOM.container.contentContainer.replaceChildren(createAboutPage());
 }
 
 function handleSwitching(event) {
