@@ -19,7 +19,7 @@ const App = (function () {
   };
 
   function showDefault() {
-    DOM.container.contentContainer.replaceChildren(createAboutPage());
+    DOM.container.contentContainer.replaceChildren(createHomePage());
   }
 
   function handleSwitching(event) {
