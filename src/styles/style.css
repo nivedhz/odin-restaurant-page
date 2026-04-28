@@ -36,6 +36,7 @@
   align-items: center;
   user-select: none;
   font-family: "Mea Culpa", sans-serif;
+  cursor: pointer;
 }
 .header-btn {
   border: none;

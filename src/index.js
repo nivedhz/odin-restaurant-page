@@ -4,10 +4,12 @@ import { createHomePage } from "./pages/home.js";
 import { createMenuPage } from "./pages/menu.js";
 
 const DOM = {
-  button: {},
   container: {
     navBtn: document.querySelector(".main-header__nav"),
     contentContainer: document.querySelector("#content"),
+  },
+  display: {
+    logoTxt: document.querySelector(".logo-txt"),
   },
 };
 const state = {
@@ -15,7 +17,7 @@ const state = {
 };
 
 function showDefault() {
-  DOM.container.contentContainer.replaceChildren(createHomePage());
+  DOM.container.contentContainer.replaceChildren(createMenuPage());
 }
 
 function handleSwitching(event) {
@@ -24,4 +26,5 @@ function handleSwitching(event) {
 }
 
 showDefault();
+DOM.display.logoTxt.addEventListener("click", showDefault);
 DOM.container.navBtn.addEventListener("click", handleSwitching);
