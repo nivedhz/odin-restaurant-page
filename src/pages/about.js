@@ -16,6 +16,7 @@ function renderMainContent(aboutContainer) {
 
   aboutContainer.append(mainContainer);
 }
+
 function renderContactFooter(aboutContainer) {
   const contactContainer = document.createElement("div");
   contactContainer.classList.add("contact-container");
@@ -26,14 +27,16 @@ function renderContactFooter(aboutContainer) {
   phoneNo.textContent = "Phone No: +91 98765 43210";
 
   const address = document.createElement("p");
-  address.textContent =
-    "Address: Dining Palace, 21 Crescent Avenue, ABQ 80086, USA";
+  address.textContent = "Address: Dining Palace, 21 Crescent Avenue, ABQ";
 
   const email = document.createElement("p");
   email.textContent = "Email: reservations@diningpalace.com";
 
   contactContainer.append(contactContainerHeading, phoneNo, address, email);
+  aboutContainer.append(contactContainer);
+}
 
+function renderOpeningFooter(aboutContainer) {
   const openingHoursContainer = document.createElement("div");
   openingHoursContainer.classList.add("opening-hours-container");
   const openingHoursHeading = document.createElement("h3");
@@ -49,7 +52,7 @@ function renderContactFooter(aboutContainer) {
     openingHoursWeekend,
   );
 
-  aboutContainer.append(openingHoursContainer, contactContainer);
+  aboutContainer.append(openingHoursContainer);
 }
 
 function createAboutPage() {
@@ -57,6 +60,7 @@ function createAboutPage() {
   aboutContainer.classList.add("about-container");
 
   renderMainContent(aboutContainer);
+  renderOpeningFooter(aboutContainer);
   renderContactFooter(aboutContainer);
   return aboutContainer;
 }
