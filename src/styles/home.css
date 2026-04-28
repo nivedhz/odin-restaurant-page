@@ -70,6 +70,7 @@
   font-family: "Smooch Sans", sans-serif;
 }
 .resto-msg__para {
+  line-height: 1.6;
   max-width: 100ch;
 }
 .resto-msg__img-container {
