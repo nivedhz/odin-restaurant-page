@@ -12,11 +12,11 @@ const state = {
   ],
 };
 
-function renderMenu() {
+const renderMenu = () => {
   document.querySelector("#content").replaceChildren(createMenuPage());
-}
+};
 
-function renderMsgGrid(homeContainer) {
+const renderMsgGrid = (homeContainer) => {
   const gridContainer = document.createElement("div");
   gridContainer.classList.add("grid-container");
 
@@ -28,9 +28,9 @@ function renderMsgGrid(homeContainer) {
   });
 
   homeContainer.appendChild(gridContainer);
-}
+};
 
-function renderImgContainer(homeContainer) {
+const renderImgContainer = (homeContainer) => {
   const imgContainer = document.createElement("div");
   imgContainer.classList.add("img-container");
 
@@ -55,9 +55,9 @@ function renderImgContainer(homeContainer) {
   imgContainer.appendChild(restoImgEl);
 
   homeContainer.appendChild(imgContainer);
-}
+};
 
-function createHomePage() {
+const createHomePage = () => {
   const homeContainer = document.createElement("main");
   homeContainer.classList.add("home-container");
 
@@ -65,6 +65,6 @@ function createHomePage() {
   renderMsgGrid(homeContainer);
 
   return homeContainer;
-}
+};
 
 export { createHomePage };
