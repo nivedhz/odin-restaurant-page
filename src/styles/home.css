@@ -56,24 +56,29 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  padding: 1rem;
-  gap: 1rem;
+  display: none;
 }
-.message-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: white;
-  font-family: "Playwrite", sans-serif;
-  height: 400px;
-  background-color: #593721;
-  border-radius: 10px;
-  line-height: 2rem;
-  border: 3px solid black;
-  box-shadow: 2px 2px 3px black;
+@media (max-width: 1480px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .message-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+    font-family: "Playwrite", sans-serif;
+    height: 400px;
+    background-color: #593721;
+    border-radius: 10px;
+    line-height: 2rem;
+    border: 3px solid black;
+    box-shadow: 2px 2px 3px black;
+  }
 }
