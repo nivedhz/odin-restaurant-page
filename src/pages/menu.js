@@ -29,9 +29,7 @@ const state = {
   ],
 };
 
-function createMenuPage() {
-  const menuContainer = document.createElement("div");
-
+function renderHeading(menuContainer) {
   const headingContainer = document.createElement("div");
   headingContainer.classList.add("heading-container");
   const restoHeading = document.createElement("h1");
@@ -39,6 +37,10 @@ function createMenuPage() {
   restoHeading.textContent = "Dining Palace";
   headingContainer.append(restoHeading);
 
+  menuContainer.append(headingContainer);
+}
+
+function renderMenu(menuContainer) {
   const menuElContainer = document.createElement("div");
   menuElContainer.classList.add("menu-el__container");
 
@@ -62,8 +64,12 @@ function createMenuPage() {
     menuItemContainer.append(itemName, itemPrice);
     menuElContainer.append(menuItemContainer);
   });
-
-  menuContainer.append(headingContainer, menuElContainer);
+  menuContainer.append(menuElContainer);
+}
+function createMenuPage() {
+  const menuContainer = document.createElement("div");
+  renderHeading(menuContainer);
+  renderMenu(menuContainer);
 
   return menuContainer;
 }
