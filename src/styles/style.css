@@ -18,7 +18,6 @@
 .container {
   display: grid;
   grid-template-rows: auto 1fr;
-  background-color: var(--clr-main-bgc);
 }
 .main-header {
   display: flex;

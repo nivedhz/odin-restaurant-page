@@ -1,33 +1,45 @@
 import "../styles/home.css";
 import restoImg from "../assets/images/resto.jpg";
+import foodCoverImg from "../assets/images/food-cover.svg";
+import cupImg from "../assets/images/cup.svg";
+import clockImg from "../assets/images/clock.svg";
 import { createMenuPage } from "./menu.js";
 
 const state = {
-  gridMsg: [
-    "Elevating dining into an art form.",
-    "Every detail thoughtfully curated",
-    "Indulge in timeless taste",
-    "Not just a meal but a moment",
-    "The kind of place you don't forget",
-  ],
+  restoMsg: {
+    header: "Welcome to Dining Palace..",
+    paragraph:
+      "Dining Palace is a refined sanctuary where culinary excellence meets warm hospitality, creating an experience that feels both indulgent and inviting. Nestled in a setting designed for comfort and elegance, the hotel celebrates the art of fine dining alongside thoughtfully curated stays. Every detail—from the ambiance of its spaces to the flavors on each plate—is crafted to delight the senses. At Dining Palace, guests are welcomed into a world where sophistication blends seamlessly with ease, offering a stay that is memorable, flavorful, and effortlessly enriching.",
+    img: [foodCoverImg, cupImg, clockImg],
+  },
 };
 
 const renderMenu = () => {
   document.querySelector("#content").replaceChildren(createMenuPage());
 };
 
-const renderMsgGrid = (homeContainer) => {
-  const gridContainer = document.createElement("div");
-  gridContainer.classList.add("grid-container");
+const renderRestoMsg = (homeContainer) => {
+  const restoMsgContainer = document.createElement("div");
+  restoMsgContainer.classList.add("resto-msg__container");
 
-  state.gridMsg.forEach((msg) => {
-    const gridItem = document.createElement("div");
-    gridItem.classList.add("message-grid");
-    gridItem.textContent = msg;
-    gridContainer.appendChild(gridItem);
+  const header = document.createElement("h1");
+  header.classList.add("resto-msg__header");
+  header.textContent = state.restoMsg.header;
+
+  const paragraph = document.createElement("p");
+  paragraph.classList.add("resto-msg__para");
+  paragraph.textContent = state.restoMsg.paragraph;
+
+  const imgContainer = document.createElement("div");
+  imgContainer.classList.add("resto-msg__img-container");
+  state.restoMsg.img.forEach((img) => {
+    const imgEl = document.createElement("img");
+    imgEl.src = img;
+    imgContainer.appendChild(imgEl);
   });
 
-  homeContainer.appendChild(gridContainer);
+  restoMsgContainer.append(header, paragraph, imgContainer);
+  homeContainer.appendChild(restoMsgContainer);
 };
 
 const renderImgContainer = (homeContainer) => {
@@ -62,7 +74,7 @@ const createHomePage = () => {
   homeContainer.classList.add("home-container");
 
   renderImgContainer(homeContainer);
-  renderMsgGrid(homeContainer);
+  renderRestoMsg(homeContainer);
 
   return homeContainer;
 };

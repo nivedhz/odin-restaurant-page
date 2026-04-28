@@ -3,8 +3,8 @@
   src: url(../assets/fonts/MeaCulpa-Regular.ttf);
 }
 @font-face {
-  font-family: "Playwrite";
-  src: url(../assets/fonts/PlaywriteDESAS-VariableFont_wght.ttf);
+  font-family: "Smooch Sans";
+  src: url(../assets/fonts/SmoochSans-VariableFont_wght.ttf);
 }
 
 * {
@@ -15,7 +15,6 @@
 
 .img-container {
   display: grid;
-  box-shadow: 3px 3px 5px black;
 }
 .resto-img {
   width: 100%;
@@ -55,30 +54,27 @@
 .menu-btn:hover {
   background-color: rgba(255, 255, 255, 0.8);
 }
-.grid-container {
-  display: none;
+.resto-msg__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
 }
-@media (max-width: 1480px) {
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding: 1rem;
-    gap: 1rem;
-  }
-  .message-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: white;
-    font-family: "Playwrite", sans-serif;
-    height: 400px;
-    background-color: #593721;
-    border-radius: 10px;
-    line-height: 2rem;
-    border: 3px solid black;
-    box-shadow: 2px 2px 3px black;
-  }
+.resto-msg__container img {
+  max-height: 50px;
+  max-width: 50px;
+}
+.resto-msg__header {
+  font-family: "Smooch Sans", sans-serif;
+}
+.resto-msg__para {
+  max-width: 100ch;
+}
+.resto-msg__img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
