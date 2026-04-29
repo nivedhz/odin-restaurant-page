@@ -3,7 +3,7 @@ import { createAboutPage } from "./pages/about.js";
 import { createHomePage } from "./pages/home.js";
 import { createMenuPage } from "./pages/menu.js";
 
-const App = (function () {
+(function () {
   const state = {
     nav: [createHomePage, createMenuPage, createAboutPage],
   };
